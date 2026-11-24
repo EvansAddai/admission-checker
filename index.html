@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Checker</title>
+    <link rel="stylesheet" href="stlye.css">
+</head>
+<body>
+    <section class="inputs">
+        <h2>Admission checker</h2>
+        <p>Check wehether you will gain admission or not.</p>
+        <h4>Enter your scores below:</h4>
+        <div class="scores">
+            <label for="English">English Language:</label>
+            <input type="number" class="english" placeholder="Enter scores" required max="9" min="1" ><br>
+           
+            
+
+            <label for="Social Studies">Social Studies:</label>
+            <input type="number" class="social" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+
+            <label for="Mathematics">Core Mathematics:</label>
+             <input type="number" class="c-maths" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+
+            <label for="Integrated science">Integrated Science:</label>
+            <input type="number" class="science" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+
+            <label for="Chemistry">Chemistry:</label>
+            <input type="number" class="chem" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+
+            <label for="Physics">Physics:</label>
+            <input type="number" class="physics" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+
+            <label for="Biology">Biology:</label>
+            <input type="number" class="bio" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+
+            <label for="Elective Mathematics">Elective Mathematics</label>
+            <input type="number" class="e-maths" placeholder="Enter scores" required max="9" min="1" inputmode="numeric"><br>
+        </div>
+        <button id="submit">Submit</button>
+        <dialog id="btn">
+            <h3>Admission Result</h3>
+            <p id="message">A message will appear here.</p>
+            <button id="close">Close</button>
+        </dialog>
+    </section>
+      
+     <script src="script.js"></script>
+</body>
+</html>
