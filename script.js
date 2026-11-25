@@ -1,6 +1,15 @@
 const submitBtn = document.getElementById("submit");
 const resultDialog = document.getElementById("btn");
 const message = document.getElementById("message");
+const scoreInputs = [...document.querySelectorAll(".scores input")];
+scoreInputs.forEach((input, index) => {
+    input.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter") return;
+
+        event.preventDefault();
+        (scoreInputs[index + 1] || submitBtn).focus();
+    });
+});
 
 document.getElementById("close").addEventListener("click", () => {
     resultDialog.close();
@@ -95,7 +104,7 @@ submitBtn.addEventListener("click", () => {
         }
         if (aggregate > 10) {
             message.textContent = "Addmission is not possible with an aggregate score greater than 10.";
-            message.textContent += ` Your aggregate score is ${aggregate}. Try other courses or universities.~`;
+            message.textContent += ` Your aggregate score is ${aggregate}. Try other courses or Universities.`;
             message.style.color = "red";
 
         }
@@ -103,12 +112,14 @@ submitBtn.addEventListener("click", () => {
         else if (aggregate <= 10 && aggregate >= 8) {
             message.textContent = `Congratulations! You can again a fee-paying admission with an aggregate score of ${aggregate} in KNUST to study BSc. in Computer Science.`;
             message.style.color = "green";
+            icon.innerHTML.textContent =`<i class="fa-thin fa-hands-clapping fa-beat"></i>`
         }
         
         
         else if (aggregate < 8 && aggregate >= 6) {
             message.textContent = `Congratulations! You can gain a regular admission with an aggregate score of ${aggregate} in KNUST to study BSc. in Computer Science.`;
             message.style.color = "green";
+            document.getElementById('icon').innerHTML =`<i class="fa-thin fa-hands-clapping">oh god</i>`
         }
         resultDialog.showModal();
     })
